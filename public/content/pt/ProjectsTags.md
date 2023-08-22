@@ -1,3 +1,3 @@
-- Category 1
-- Category 2
-- Category 3
+- Categoria 1
+- Categoria 2
+- Categoria 3
