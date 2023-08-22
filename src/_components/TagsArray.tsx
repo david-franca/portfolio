@@ -1,18 +1,18 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import {useEffect, useState} from "react";
 import {useLocale} from "next-intl";
 
 const parseTags = (mdContent: string) => {
     const tags: {value: string}[] = [];
-    const lines = mdContent.split("\r\n");
-
+    const lines = mdContent.split("- ");
     for (let i = 0; i < lines.length; i++) {
-        const value = lines[i];
-
-        tags.push({
+        const value = lines[i].trim();
+        if (value.length) {
+            tags.push({
             value
         });
+        }
     }
     return tags;
 };
