@@ -21,6 +21,8 @@ import {
     Stack,
     Text,
     ThemeTypings,
+    Wrap,
+    WrapItem,
 } from "@chakra-ui/react";
 import {ChevronRightIcon} from "@chakra-ui/icons";
 import {useEffect, useState} from "react";
@@ -89,22 +91,23 @@ export default function Experience({color}: ExperienceProps) {
                                 <Fade key={exp.company}>
                                     <Card size="sm">
                                         <CardHeader>
-                                            <Flex justifyContent="space-between">
-                                                <HStack>
-                                                    <Image src={exp.image} h={50} alt="Logo"/>
+                                            <Stack display="flex" justifyContent="space-between"
+                                                   direction={{base: 'column', sm: 'row'}}>
+                                                <Stack direction={{base: 'column', sm: 'row'}}>
+                                                    <Image src={exp.image} h={['full', 50]} alt="Logo"/>
                                                     <Box px={2} textAlign="left">
                                                         <Text fontWeight={600}>{exp.company}</Text>
                                                         <Text>{exp.position}</Text>
                                                     </Box>
-                                                </HStack>
-                                                <Text px={2} fontWeight={300}>
+                                                </Stack>
+                                                <Text px={2} fontWeight={300} textAlign={["left", "center"]}>
                                                     {exp.duration}
                                                 </Text>
-                                            </Flex>
+                                            </Stack>
                                         </CardHeader>
                                         <CardBody>
                                             <Flex>
-                                                <List spacing={3} textAlign="left">
+                                                <List spacing={3} textAlign="left" w="full">
                                                     {exp.listItems.map((item, index) => (
                                                         <ListItem key={index}>
                                                             <ListIcon
@@ -120,14 +123,16 @@ export default function Experience({color}: ExperienceProps) {
                                         </CardBody>
                                         <CardFooter>
                                             <HStack spacing={2}>
-                                                {exp.badges.map((badge) => (
-                                                    <Badge
-                                                        key={badge.name}
-                                                        colorScheme={badge.colorScheme}
-                                                    >
+                                                <Wrap>
+
+                                                    {exp.badges.map((badge) => (
+                                                        <WrapItem key={badge.name}>
+                                                            <Badge colorScheme={badge.colorScheme}>
                                                         {badge.name}
                                                     </Badge>
+                                                        </WrapItem>
                                                 ))}
+                                                </Wrap>
                                             </HStack>
                                         </CardFooter>
                                     </Card>

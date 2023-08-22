@@ -1,25 +1,28 @@
 'use client';
 
 import {
-    Divider,
-    Stack,
-    Text,
-    Container,
+    Badge,
     Box,
-    HStack,
     Button,
     ButtonGroup,
     Card,
     CardBody,
-    Image,
+    Center,
+    Container,
+    Divider,
     Heading,
-    SimpleGrid,
-    Badge,
+    HStack,
+    Image,
     Link,
-    Center, ThemeTypings,
+    SimpleGrid,
+    Stack,
+    Text,
+    ThemeTypings,
+    Wrap,
+    WrapItem,
 } from "@chakra-ui/react";
-import { Fade } from "react-awesome-reveal";
-import { useState } from "react";
+import {Fade} from "react-awesome-reveal";
+import {useState} from "react";
 import ProjectsArray from "./ProjectsArray";
 import OtherProjectsArray from "./OtherProjectsArray";
 import TagsArray from "./TagsArray";
@@ -109,30 +112,36 @@ export default function Projects({ color }: ProjectsProps) {
                     </Text>
                     <Center px={4}>
                         <ButtonGroup variant="outline">
-                            <Button
-                                colorScheme={selected === "All" ? `${color}` : "gray"}
-                                onClick={() => handleSelected("All")}
-                            >
-                                {other('all')}
-                            </Button>
-                            {options.map((option, i) => (
-                                <Button
-                                    key={i}
-                                    colorScheme={selected === option.value ? `${color}` : "gray"}
-                                    onClick={() => handleSelected(option.value)}
-                                >
-                                    {option.value}
-                                </Button>
-                            ))}
+                            <Wrap>
+                                <WrapItem>
+                                    <Button
+                                        colorScheme={selected === "All" ? `${color}` : "gray"}
+                                        onClick={() => handleSelected("All")}
+                                    >
+                                        {other('all')}
+                                    </Button>
+                                </WrapItem>
+                                {options.map((option, i) => (
+                                    <WrapItem>
+                                        <Button
+                                            key={i}
+                                            colorScheme={selected === option.value ? `${color}` : "gray"}
+                                            onClick={() => handleSelected(option.value)}
+                                        >
+                                            {option.value}
+                                        </Button>
+                                    </WrapItem>
+                                ))}
+                            </Wrap>
                         </ButtonGroup>
                     </Center>
                     <SimpleGrid columns={[1, 2, 3]} px={4} spacing={4}>
                         {others
-                            .filter((other) => {
-                                if (selected === "All") {
+                            .filter((o) => {
+                                if (selected === other('all')) {
                                     return true;
                                 } else {
-                                    return other.tags.includes(selected);
+                                    return o.tags.includes(selected);
                                 }
                             })
                             .map((other, i) => (
@@ -158,15 +167,18 @@ export default function Projects({ color }: ProjectsProps) {
                                                     ))}
                                                 </HStack>
                                                 <HStack flexWrap="wrap" pt={4} spacing={2}>
+                                                    <Wrap>
                                                     {other.badges.map((badge) => (
-                                                        <Badge
-                                                            my={2}
-                                                            key={badge.text}
-                                                            colorScheme={badge.colorScheme}
-                                                        >
-                                                            {badge.text}
-                                                        </Badge>
+                                                        <WrapItem key={badge.text}>
+                                                            <Badge
+                                                                my={2}
+                                                                colorScheme={badge.colorScheme}
+                                                            >
+                                                                {badge.text}
+                                                            </Badge>
+                                                        </WrapItem>
                                                     ))}
+                                                    </Wrap>
                                                 </HStack>
                                             </CardBody>
                                         </Stack>
