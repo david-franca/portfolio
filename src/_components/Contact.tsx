@@ -1,0 +1,65 @@
+'use client';
+
+import {Box, Center, Container, Divider, Heading, HStack, Stack, Text, ThemeTypings,} from "@chakra-ui/react";
+import {FaEnvelope, FaGithub, FaLinkedin} from "react-icons/fa";
+import ProfileArray from "./ProfileArray";
+import {useTranslations} from "next-intl";
+
+interface ContactProps {
+    color: ThemeTypings["colorSchemes"];
+}
+
+export default function Contact({color}: ContactProps) {
+    const nav = useTranslations("Nav");
+    const contact = useTranslations("Contact");
+    const profile = ProfileArray();
+    const linkedin = () => {
+        window.open(`${profile.linkedin}`, "_blank", "noreferrer,noopener");
+    };
+    const github = () => {
+        window.open(`${profile.github}`, "_blank", "noreferrer,noopener");
+    };
+    const email = () => {
+        window.open(`mailto:${profile.email}`, "_blank", "noreferrer,noopener");
+    };
+    return (
+        <Container maxW={"3xl"} id="contact">
+            <Stack
+                as={Box}
+                textAlign={"center"}
+                spacing={{base: 8, md: 14}}
+                pb={{base: 20, md: 36}}
+            >
+                <Stack align="center" direction="row" p={4}>
+                    <HStack mx={4}>
+                        <Text color={`${color}.400`} fontWeight={800}>
+                            04
+                        </Text>
+                        <Text fontWeight={800}>{
+                            nav("contact")
+                        }</Text>
+                    </HStack>
+                    <Divider orientation="horizontal"/>
+                </Stack>
+                <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
+                    <Heading fontSize={"3xl"}>
+                        {contact('touch')}
+                    </Heading>
+                    <Text color={"gray.600"} fontSize={"xl"} px={4}>
+                        {profile.contact}
+                    </Text>
+                    <Text color={`${color}.500`} fontWeight={600} fontSize={"lg"} px={4}>
+                        {profile.email}
+                    </Text>
+                    <Center>
+                        <HStack pt={4} spacing={4}>
+                            <FaLinkedin onClick={linkedin} size={28}/>
+                            <FaGithub onClick={github} size={28}/>
+                            <FaEnvelope onClick={email} size={28}/>
+                        </HStack>
+                    </Center>
+                </Stack>
+            </Stack>
+        </Container>
+    );
+}
