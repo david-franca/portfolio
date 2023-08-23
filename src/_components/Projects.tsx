@@ -122,9 +122,8 @@ export default function Projects({ color }: ProjectsProps) {
                                     </Button>
                                 </WrapItem>
                                 {options.map((option, i) => (
-                                    <WrapItem>
+                                    <WrapItem key={i}>
                                         <Button
-                                            key={i}
                                             colorScheme={selected === option.value ? `${color}` : "gray"}
                                             onClick={() => handleSelected(option.value)}
                                         >
