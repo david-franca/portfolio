@@ -1,29 +1,29 @@
-'use client';
+"use client";
 
 import {
-    Box,
-    Container,
-    Stack,
-    Text,
-    useColorModeValue,
+  Box,
+  Container,
+  Stack,
+  Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import {useTranslations} from "next-intl";
+import { FooterDocumentData } from "../../prismicio-types";
 
-export function Footer() {
-    const t = useTranslations("Footer");
-    return (
-        <Box
-            bg={useColorModeValue("gray.50", "gray.900")}
-            color={useColorModeValue("gray.700", "gray.200")}
-        >
-            <Container
-                as={Stack}
-                maxW={"6xl"}
-                py={4}
-                align="center"
-            >
-                <Text>© {(new Date()).getFullYear()} David França. {t('made')}</Text>
-            </Container>
-        </Box>
-    );
+interface FooterProps {
+  data: FooterDocumentData;
+}
+
+export function Footer({ data }: FooterProps) {
+  return (
+    <Box
+      bg={useColorModeValue("gray.50", "gray.900")}
+      color={useColorModeValue("gray.700", "gray.200")}
+    >
+      <Container as={Stack} maxW={"6xl"} py={4} align="center">
+        <Text>
+          © {new Date().getFullYear()} David França. {data.copyright}
+        </Text>
+      </Container>
+    </Box>
+  );
 }

@@ -3,7 +3,8 @@ Description
 - ![600x200](https://via.placeholder.com/600x200)
 - Tags: Category 1
 - Badges:
-  - Badge [blue]
+  - React [blue]
+  - Next.JS [cyan]
 - Buttons:
   - Link [https://example.com]
 

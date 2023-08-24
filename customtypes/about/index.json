@@ -1,0 +1,27 @@
+{
+  "id": "about",
+  "label": "About",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "seo_title": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Title",
+          "placeholder": ""
+        }
+      },
+      "about": {
+        "type": "StructuredText",
+        "config": {
+          "label": "About",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      }
+    }
+  }
+}

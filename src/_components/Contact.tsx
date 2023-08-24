@@ -1,65 +1,97 @@
-'use client';
+"use client";
 
-import {Box, Center, Container, Divider, Heading, HStack, Stack, Text, ThemeTypings,} from "@chakra-ui/react";
-import {FaEnvelope, FaGithub, FaLinkedin} from "react-icons/fa";
-import ProfileArray from "./ProfileArray";
-import {useTranslations} from "next-intl";
+import {
+  Box,
+  Center,
+  Container,
+  Divider,
+  Heading,
+  HStack,
+  IconButton,
+  Stack,
+  Text,
+  ThemeTypings,
+} from "@chakra-ui/react";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { ContactDocumentData } from "../../prismicio-types";
+import { prismicH } from "@/prismicio";
 
 interface ContactProps {
-    color: ThemeTypings["colorSchemes"];
+  color: ThemeTypings["colorSchemes"];
+  data: ContactDocumentData;
 }
 
-export default function Contact({color}: ContactProps) {
-    const nav = useTranslations("Nav");
-    const contact = useTranslations("Contact");
-    const profile = ProfileArray();
-    const linkedin = () => {
-        window.open(`${profile.linkedin}`, "_blank", "noreferrer,noopener");
-    };
-    const github = () => {
-        window.open(`${profile.github}`, "_blank", "noreferrer,noopener");
-    };
-    const email = () => {
-        window.open(`mailto:${profile.email}`, "_blank", "noreferrer,noopener");
-    };
-    return (
-        <Container maxW={"3xl"} id="contact">
-            <Stack
-                as={Box}
-                textAlign={"center"}
-                spacing={{base: 8, md: 14}}
-                pb={{base: 20, md: 36}}
-            >
-                <Stack align="center" direction="row" p={4}>
-                    <HStack mx={4}>
-                        <Text color={`${color}.400`} fontWeight={800}>
-                            04
-                        </Text>
-                        <Text fontWeight={800}>{
-                            nav("contact")
-                        }</Text>
-                    </HStack>
-                    <Divider orientation="horizontal"/>
-                </Stack>
-                <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
-                    <Heading fontSize={"3xl"}>
-                        {contact('touch')}
-                    </Heading>
-                    <Text color={"gray.600"} fontSize={"xl"} px={4}>
-                        {profile.contact}
-                    </Text>
-                    <Text color={`${color}.500`} fontWeight={600} fontSize={"lg"} px={4}>
-                        {profile.email}
-                    </Text>
-                    <Center>
-                        <HStack pt={4} spacing={4}>
-                            <FaLinkedin onClick={linkedin} size={28}/>
-                            <FaGithub onClick={github} size={28}/>
-                            <FaEnvelope onClick={email} size={28}/>
-                        </HStack>
-                    </Center>
-                </Stack>
-            </Stack>
-        </Container>
-    );
+export function Contact({ color, data }: ContactProps) {
+  const linkedin = () => {
+    const linkedin = prismicH.asLink(data.linkedin);
+    window.open(`${linkedin}`, "_blank", "noreferrer,noopener");
+  };
+  const github = () => {
+    const github = prismicH.asLink(data.github);
+    window.open(`${github}`, "_blank", "noreferrer,noopener");
+  };
+  const email = () => {
+    const email = data.email;
+    window.open(`mailto:${email}`, "_blank", "noreferrer,noopener");
+  };
+  return (
+    <Container maxW={"3xl"} id="contact">
+      <Stack
+        as={Box}
+        textAlign={"center"}
+        spacing={{ base: 8, md: 14 }}
+        pb={{ base: 20, md: 36 }}
+      >
+        <Stack align="center" direction="row" p={4}>
+          <HStack mx={4}>
+            <Text color={`${color}.400`} fontWeight={800}>
+              04
+            </Text>
+            <Text fontWeight={800}>{data.seo_title}</Text>
+          </HStack>
+          <Divider orientation="horizontal" />
+        </Stack>
+        <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
+          <Heading fontSize={"3xl"}>{data.touch}</Heading>
+          <Text color={"gray.600"} fontSize={"xl"} px={4}>
+            {data.contact}
+          </Text>
+          <Text
+            color={`${color}.500`}
+            fontWeight={600}
+            fontSize={"lg"}
+            alignSelf="center"
+            px={4}
+          >
+            {data.email}
+          </Text>
+          <Center>
+            <HStack pt={4} spacing={2}>
+              <IconButton
+                variant="ghost"
+                aria-label={"linkedin"}
+                fontSize={28}
+                icon={<FaLinkedin />}
+                onClick={linkedin}
+              />
+              <IconButton
+                variant="ghost"
+                aria-label={"github"}
+                fontSize={28}
+                icon={<FaGithub />}
+                onClick={github}
+              />
+              <IconButton
+                variant="ghost"
+                aria-label={"email"}
+                fontSize={28}
+                icon={<FaEnvelope />}
+                onClick={email}
+              />
+            </HStack>
+          </Center>
+        </Stack>
+      </Stack>
+    </Container>
+  );
 }

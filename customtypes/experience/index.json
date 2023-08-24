@@ -1,0 +1,116 @@
+{
+  "id": "experience",
+  "label": "Experience",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "company": {
+        "type": "Text",
+        "config": {
+          "label": "Company",
+          "placeholder": ""
+        }
+      },
+      "position": {
+        "type": "Text",
+        "config": {
+          "label": "Position",
+          "placeholder": ""
+        }
+      },
+      "started_in": {
+        "type": "Date",
+        "config": {
+          "label": "Started In",
+          "placeholder": ""
+        }
+      },
+      "finished_in": {
+        "type": "Date",
+        "config": {
+          "label": "Finished In",
+          "placeholder": ""
+        }
+      },
+      "badges": {
+        "type": "Group",
+        "config": {
+          "label": "Badges",
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "color": {
+              "type": "Select",
+              "config": {
+                "label": "Color",
+                "placeholder": "",
+                "options": [
+                  "whiteAlpha",
+                  "blackAlpha",
+                  "gray",
+                  "red",
+                  "orange",
+                  "yellow",
+                  "green",
+                  "teal",
+                  "blue",
+                  "cyan",
+                  "purple",
+                  "pink"
+                ],
+                "default_value": "whiteAlpha"
+              }
+            }
+          }
+        }
+      },
+      "responsibilities": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Responsibilities",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "list-item"
+        }
+      },
+      "tags": {
+        "type": "Group",
+        "config": {
+          "label": "Tags",
+          "fields": {
+            "label": {
+              "type": "Select",
+              "config": {
+                "label": "Label",
+                "placeholder": "",
+                "options": ["Frontend", "Backend"],
+                "default_value": "Frontend"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

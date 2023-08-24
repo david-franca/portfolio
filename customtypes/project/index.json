@@ -1,0 +1,111 @@
+{
+  "id": "project",
+  "label": "Project",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "seo_name": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Name",
+          "placeholder": ""
+        }
+      },
+      "seo_description": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Description",
+          "placeholder": ""
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {
+            "width": 600,
+            "height": 200
+          },
+          "thumbnails": []
+        }
+      },
+      "badges": {
+        "type": "Group",
+        "config": {
+          "label": "Badges",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "color": {
+              "type": "Select",
+              "config": {
+                "label": "Color",
+                "placeholder": "",
+                "options": [
+                  "whiteAlpha",
+                  "blackAlpha",
+                  "gray",
+                  "red",
+                  "orange",
+                  "yellow",
+                  "green",
+                  "teal",
+                  "blue",
+                  "cyan",
+                  "purple",
+                  "pink"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "buttons": {
+        "type": "Group",
+        "config": {
+          "label": "Buttons",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "select": null
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "fixed": {
+        "type": "Boolean",
+        "config": {
+          "label": "Fixed",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "nav",
+  "label": "Nav",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "about": {
+        "type": "Text",
+        "config": {
+          "label": "About",
+          "placeholder": ""
+        }
+      },
+      "experience": {
+        "type": "Text",
+        "config": {
+          "label": "Experience",
+          "placeholder": ""
+        }
+      },
+      "projects": {
+        "type": "Text",
+        "config": {
+          "label": "Projects",
+          "placeholder": ""
+        }
+      },
+      "contact": {
+        "type": "Text",
+        "config": {
+          "label": "Contact",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "contact",
+  "label": "Contact",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "seo_title": {
+        "type": "Text",
+        "config": {
+          "label": "SEO Title",
+          "placeholder": ""
+        }
+      },
+      "linkedin": {
+        "type": "Link",
+        "config": {
+          "label": "Linkedin",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "github": {
+        "type": "Link",
+        "config": {
+          "label": "Github",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
+      },
+      "touch": {
+        "type": "Text",
+        "config": {
+          "label": "Touch",
+          "placeholder": ""
+        }
+      },
+      "contact": {
+        "type": "Text",
+        "config": {
+          "label": "Contact",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
