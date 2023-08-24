@@ -19,31 +19,31 @@ export const repositoryName = config.repositoryName;
 const routes: prismic.ClientConfig["routes"] = [
   {
     type: "about",
-    path: "/about",
+    path: "/",
   },
   {
     type: "contact",
-    path: "/contact",
+    path: "/",
   },
   {
     type: "nav",
-    path: "/nav",
+    path: "/",
   },
   {
     type: "hero",
-    path: "/hero",
+    path: "/",
   },
   {
     type: "experience",
-    path: "/experience",
+    path: "/",
   },
   {
     type: "footer",
-    path: "/footer",
+    path: "/",
   },
   {
     type: "project",
-    path: "/project",
+    path: "/",
   },
 ];
 
