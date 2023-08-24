@@ -5,7 +5,12 @@ import { AboutSection } from "@/_pages/About";
 import { ContactSection } from "@/_pages/Contact";
 import { FooterSection } from "@/_pages/Footer";
 import { ProjectSection } from "@/_pages/Project";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Portfolio of David F.",
+};
 export default async function Home({
   params: { locale },
 }: {
