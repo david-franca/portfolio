@@ -19,8 +19,8 @@ export function Footer({ data }: FooterProps) {
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
-      <Container as={Stack} maxW={"6xl"} py={4} align="center">
-        <Text>
+      <Container as={Stack} maxW={"6xl"} py={4} textAlign="center">
+        <Text alignSelf="center">
           © {new Date().getFullYear()} David França. {data.copyright}
         </Text>
       </Container>
