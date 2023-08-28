@@ -12,10 +12,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Portfolio of David F.",
-  // icons: {
-  //   icon: "./favicon-32x32.png",
-  //   apple: "./apple-touch-icon.png",
-  // },
 };
 
 interface RootLayoutProps extends PropsWithChildren {

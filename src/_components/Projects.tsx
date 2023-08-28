@@ -50,7 +50,7 @@ export function Projects({ color, data, title }: ProjectsProps) {
 
   const options = TagsArray("ProjectsTags");
 
-  const [selected, setSelected] = useState("All");
+  const [selected, setSelected] = useState(other("all"));
 
   const handleSelected = (value: string) => {
     setSelected(value);
