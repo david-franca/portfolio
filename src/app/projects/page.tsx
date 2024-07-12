@@ -1,13 +1,14 @@
+import { SanityDocument } from "next-sanity";
+import Link from "next/link";
+import React from "react";
+import { IoArrowBack } from "react-icons/io5";
+
 import { Footer } from "@/components/Footer";
 import { IconButton } from "@/components/IconButton";
 import { NavBar } from "@/components/NavBar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { PROJECTS_QUERY } from "@/sanity/lib/queries";
-import { SanityDocument } from "next-sanity";
-import Link from "next/link";
-import React from "react";
-import { IoArrowBack } from "react-icons/io5";
 
 export default async function Projects() {
   const projects = await sanityFetch<SanityDocument[]>({

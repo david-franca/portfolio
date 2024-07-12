@@ -1,9 +1,10 @@
-import { Footer } from "@/components/Footer";
-import { IconButton } from "@/components/IconButton";
-import { NavBar } from "@/components/NavBar";
 import Image from "next/image";
 import Link from "next/link";
 import { IoArrowBack } from "react-icons/io5";
+
+import { Footer } from "@/components/Footer";
+import { IconButton } from "@/components/IconButton";
+import { NavBar } from "@/components/NavBar";
 
 export default function About() {
   return (

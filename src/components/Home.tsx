@@ -1,7 +1,8 @@
 "use client";
 
-import { useRefs } from "@/context";
 import Image from "next/image";
+
+import { useRefs } from "@/context";
 
 export function Resume() {
   const { resumeRef } = useRefs();

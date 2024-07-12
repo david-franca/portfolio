@@ -7,13 +7,13 @@ import toast, { Toaster } from "react-hot-toast";
 import { IoArrowForward, IoLogoGithub, IoLogoInstagram } from "react-icons/io5";
 import * as z from "zod";
 
+import { useRefs } from "@/context";
 import emailJs from "@emailjs/browser";
 import { Input, Textarea } from "@headlessui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button } from "./Button";
 import { IconButton } from "./IconButton";
-import { useRefs } from "@/context";
 
 const schema = z.object({
   name: z.string().min(1, { message: "Nome obrigatório" }),

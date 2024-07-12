@@ -1,13 +1,13 @@
 "use client";
 
+import { SanityDocument } from "next-sanity";
+import { useRouter } from "next/navigation";
 import { IoArrowForward } from "react-icons/io5";
 
-import { SanityDocument } from "next-sanity";
+import { useRefs } from "@/context";
 
 import { Button } from "./Button";
 import { ProjectCard } from "./ProjectCard";
-import { useRefs } from "@/context";
-import { useRouter } from "next/navigation";
 
 export function Projects({
   projects,

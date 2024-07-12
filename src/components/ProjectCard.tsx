@@ -4,11 +4,11 @@ import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { IoLogoGithub } from "react-icons/io5";
 
+import { formatDate } from "@/helpers";
 import { urlForImage } from "@/sanity/lib/image";
 
 import { IconButton } from "./IconButton";
 import { TechIcons } from "./TechIcons";
-import { formatDate } from "@/helpers";
 
 interface ProjectProps {
   project: SanityDocument;

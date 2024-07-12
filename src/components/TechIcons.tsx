@@ -1,3 +1,4 @@
+import React from "react";
 import { BiLogoRedux } from "react-icons/bi";
 import {
   IoLogoCss3,
@@ -15,8 +16,6 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-
-import React from "react";
 
 export const TechIcons = ({
   techs,

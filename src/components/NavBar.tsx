@@ -1,14 +1,13 @@
 "use client";
 
+import Link from "next/link";
+import { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 
 import { useRefs } from "@/context";
 
 import { IconButton } from "./IconButton";
 import { MenuItem } from "./MenuItem";
-
-import Link from "next/link";
-import { useState } from "react";
 
 export function NavBar() {
   const { resumeRef, aboutRef, projectsRef, contactRef } = useRefs();
