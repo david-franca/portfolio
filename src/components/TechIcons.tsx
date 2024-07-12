@@ -10,6 +10,7 @@ import {
   IoLogoVue,
 } from "react-icons/io5";
 import {
+  SiChakraui,
   SiNestjs,
   SiNextdotjs,
   SiStyledcomponents,
@@ -36,6 +37,7 @@ export const TechIcons = ({
     tailwind: SiTailwindcss,
     typescript: SiTypescript,
     "next.js": SiNextdotjs,
+    chakra: SiChakraui,
   };
   const iconClassName =
     "text-light-surface-techs dark:text-dark-surface-techs h-6 w-6";
