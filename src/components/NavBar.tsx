@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { IoClose, IoMenu } from "react-icons/io5";
+import { IoClose, IoMenu, IoMoon, IoSunny } from "react-icons/io5";
 
 import { useRefs } from "@/context";
 
@@ -20,6 +20,13 @@ export function NavBar() {
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
     setIsDrawerOpen(false);
+  };
+
+  const [dark, setDark] = useState(false);
+
+  const darkModeHandler = () => {
+    setDark(!dark);
+    document.body.classList.toggle("dark");
   };
 
   return (
@@ -49,6 +56,9 @@ export function NavBar() {
             label="Contato"
             onClick={() => scrollToSection(contactRef)}
           />
+          <IconButton onClick={darkModeHandler}>
+            {!dark ? <IoSunny /> : <IoMoon />}
+          </IconButton>
         </div>
       </nav>
       <div

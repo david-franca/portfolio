@@ -14,7 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        dark: {
+        light: {
           primary: {
             500: "#8A42DB",
             400: "#9955E8",
@@ -37,27 +37,27 @@ const config: Config = {
             gradient: "linear-gradient(90deg, #9955E8 0%, #7BFFAF 100%)",
           },
         },
-        light: {
+        dark: {
           primary: {
-            500: "#8A42DB",
-            400: "#9955E8",
+            500: "#9F7CE3",
+            400: "#B189F0",
           },
-          secondary: "#7DFFAF",
+          secondary: "#4BFF96",
           surface: {
-            background: "#F5F6F6",
+            background: "#F0F1F2",
             primary: "#FFFFFF",
-            secondary: "#C9CFCF",
-            tertiary: "#B3BCBC",
-            techs: "#9955E8",
-            buttonDefault: "#8A42DB",
-            buttonHover: "#9955E8",
+            secondary: "#F5F6F7",
+            tertiary: "#E0E2E7",
+            techs: "#B189F0",
+            buttonDefault: "#9F7CE3",
+            buttonHover: "#B189F0",
           },
           text: {
-            primary: "#171023",
-            secondary: "#413A4F",
+            primary: "#333333",
+            secondary: "#666666",
           },
           brand: {
-            gradient: "linear-gradient(90deg, #9955E8 0%, #7BFFAF 100%)",
+            gradient: "linear-gradient(90deg, #B189F0 0%, #4BFF96 100%)",
           },
         },
       },
