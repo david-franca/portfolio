@@ -91,6 +91,10 @@ export function NavBar() {
               scrollToSection(contactRef);
             }}
           />
+          <hr className="border-light-surface-secondary dark:border-dark-surface-secondary" />
+          <IconButton onClick={darkModeHandler} variant="surface">
+            {!dark ? <IoSunny /> : <IoMoon />}
+          </IconButton>
         </div>
       </div>
     </>
