@@ -1,6 +1,6 @@
 "use client";
 
-import { IoLanguage, IoMoon, IoSunny } from "react-icons/io5";
+import { IoClose, IoLanguage, IoMenu, IoMoon, IoSunny } from "react-icons/io5";
 
 import { useRefs } from "@/context";
 
@@ -29,7 +29,7 @@ export function NavBar() {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <nav className="flex w-full px-20 py-4 bg-light-surface-background dark:bg-dark-surface-background shadow-lg sticky top-0 justify-between items-center z-10">
+    <nav className="flex w-full pl-4 py-2 pr-2 md:px-20 md:py-4 bg-light-surface-background dark:bg-dark-surface-background shadow-lg sticky top-0 justify-between items-center z-10">
       <div>
         <Link href={"/"} className="flex gap-2">
           <span className="text-light-text-primary dark:text-dark-text-primary font-kalam text-3xl font-light">
@@ -40,7 +40,10 @@ export function NavBar() {
           </span>
         </Link>
       </div>
-      <div className="flex gap-4 flex-row items-center">
+      <IconButton className="md:hidden">
+        <IoMenu />
+      </IconButton>
+      <div className="gap-4 flex-row items-center hidden md:flex">
         <MenuItem label="Resumo" onClick={() => scrollToSection(resumeRef)} />
         <MenuItem label="Sobre" onClick={() => scrollToSection(aboutRef)} />
         <MenuItem
