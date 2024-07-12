@@ -16,16 +16,16 @@ interface ProjectProps {
 
 export function ProjectCard({ project }: Readonly<ProjectProps>) {
   return (
-    <div className="flex flex-col relative group w-fit">
+    <div className="flex flex-col relative group">
       <Link href={`/project/${project.slug.current}`} passHref>
-        <div className="flex p-6 flex-col gap-6 bg-light-surface-primary dark:bg-dark-surface-primary rounded-2xl border-[1.5px] border-transparent hover:border-light-secondary dark:hover:border-dark-secondary hover:shadow-card ease-out duration-300 transition-all">
-          <div className="flex justify-center">
+        <div className="flex flex-col h-full p-6 gap-6 bg-light-surface-primary dark:bg-dark-surface-primary rounded-2xl border-[1.5px] border-transparent hover:border-light-secondary dark:hover:border-dark-secondary hover:shadow-card ease-out duration-300 transition-all">
+          <div className="flex justify-center h-52">
             <Image
               src={urlForImage(project.image)}
               alt={project.image.alt}
               width={336}
               height={160}
-              className="rounded-t-lg w-full"
+              className="rounded-t-lg w-full object-cover h-full"
             />
           </div>
           <div className="flex justify-between flex-row">
@@ -37,7 +37,7 @@ export function ProjectCard({ project }: Readonly<ProjectProps>) {
               <TechIcons techs={project.technologies} />
             </div>
           </div>
-          <div className="flex flex-col gap-2 rounded-lg">
+          <div className="flex flex-col gap-2 rounded-lg flex-grow">
             <span className="text-light-text-primary dark:text-dark-text-primary font-heebo text-xl font-medium">
               {project.title}
             </span>

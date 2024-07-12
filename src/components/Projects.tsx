@@ -19,7 +19,7 @@ export function Projects({
 
   return (
     <section
-      className="flex md:px-28 md:py-16 gap-10 flex-col px-12 py-6"
+      className="flex lg:px-28 md:px-16 md:py-16 gap-10 flex-col px-12 py-6"
       id="projects"
       ref={projectsRef}
     >
@@ -31,7 +31,7 @@ export function Projects({
           Dê uma olhada nos meus projetos em destaque
         </span>
       </div>
-      <div className="grid gap-10 w-full md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-10">
         {projects.map((project) => (
           <ProjectCard key={project._id} project={project} />
         ))}
