@@ -77,9 +77,9 @@ const portableTextComponents: Partial<PortableTextReactComponents> = {
 
 export default async function Project({
   params,
-}: {
+}: Readonly<{
   params: { slug: string };
-}) {
+}>) {
   const project = await sanityFetch<SanityDocument>({
     query: PROJECT_QUERY,
     params: { slug: params.slug },

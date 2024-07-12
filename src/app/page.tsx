@@ -6,7 +6,7 @@ import { NavBar } from "@/components/NavBar";
 import { Projects } from "@/components/Projects";
 
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { FAVORITE_PROJECTS_QUERY, PROJECTS_QUERY } from "@/sanity/lib/queries";
+import { FAVORITE_PROJECTS_QUERY } from "@/sanity/lib/queries";
 import { SanityDocument } from "next-sanity";
 
 export default async function Home() {

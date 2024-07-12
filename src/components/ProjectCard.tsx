@@ -1,4 +1,4 @@
-import { PortableText, SanityDocument, toPlainText } from "next-sanity";
+import { SanityDocument, toPlainText } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
