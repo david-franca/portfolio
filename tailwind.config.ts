@@ -42,7 +42,7 @@ const config: Config = {
             500: "#9F7CE3",
             400: "#B189F0",
           },
-          secondary: "#4BFF96",
+          secondary: "#05612b",
           surface: {
             background: "#F0F1F2",
             primary: "#FFFFFF",
@@ -57,7 +57,7 @@ const config: Config = {
             secondary: "#666666",
           },
           brand: {
-            gradient: "linear-gradient(90deg, #B189F0 0%, #4BFF96 100%)",
+            gradient: "linear-gradient(90deg, #B189F0 0%, #05612b 100%)",
           },
         },
       },
