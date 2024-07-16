@@ -56,7 +56,7 @@ export function ProjectCard({ project }: Readonly<ProjectProps>) {
           rel="noreferrer"
           className="appearance-none"
         >
-          <IconButton>
+          <IconButton aria-label="github">
             <IoLogoGithub />
           </IconButton>
         </a>
@@ -66,7 +66,7 @@ export function ProjectCard({ project }: Readonly<ProjectProps>) {
           rel="noreferrer"
           className="appearance-none"
         >
-          <IconButton>
+          <IconButton aria-label="live">
             <FiArrowUpRight />
           </IconButton>
         </a>

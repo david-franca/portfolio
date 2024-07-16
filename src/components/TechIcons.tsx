@@ -47,7 +47,13 @@ export const TechIcons = ({
       {techs.map((tech) => {
         const Icon =
           techIcons[tech.tech as keyof typeof techIcons] || IoLogoJavascript;
-        const IconComponent = <Icon key={tech._id} className={iconClassName} />;
+        const IconComponent = (
+          <Icon
+            key={tech._id}
+            className={iconClassName}
+            aria-label={tech.tech}
+          />
+        );
         return IconComponent;
       })}
     </>

@@ -24,6 +24,7 @@ export function IconButton({
   return (
     <HButton
       {...props}
+      aria-label="button icon"
       className={`flex w-fit h-fit p-3 gap-2 rounded-lg border-2 border-transparent focus:border-light-text-primary dark:focus:border-dark-text-primary transition-colors ease-out duration-300 text-light-text-primary dark:text-dark-text-primary *:w-6 *:h-6 ${variantClasses[variant]} ${props.className}`}
     >
       {children}
